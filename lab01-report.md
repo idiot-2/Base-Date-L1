@@ -64,7 +64,7 @@ ORDER BY table_name;
       email AS Електронна_пошта
     FROM employees;
   ```
-  Результат: Отримано 8 записiв спiвробiтникiв з прiзвищем, iмям, номером телефону та електронною поштою.
+  Результат: Отримано 8 записiв спiвробiтникiв з прiзвищем, iменем, номером телефону та електронною поштою.
   <img width="511" height="323" alt="image" src="https://github.com/user-attachments/assets/06bd953f-d0b6-4f92-8581-d6d875543b28" />
 
 #### 2. Прості умови WHERE:
@@ -84,7 +84,65 @@ ORDER BY table_name;
     WHERE 
       city = 'Київ';
   ```
-  Результат:
+  Результат: Отримано 4 записи за мiстом Київ, з назвою компанiї, iменем контактної особи, адрессою, мiсто, поштовым iндексом, номером телефону, електронною поштою та типом клієнта.
+  <img width="1438" height="170" alt="image" src="https://github.com/user-attachments/assets/ca6f7fe8-3264-41a2-8488-615f4f9aa9fc" />
+
+  ```sql
+    -- Вивести товари, які коштують більше 25000 грн. --
+    SELECT
+      product_name AS Назва_товару,
+      quantity_per_unit AS Кiлькiсть_в_упаковцi,
+      unit_price AS Цiна,
+      units_in_stock AS У_наявностi,
+      units_on_order AS В_доставцi,
+      discontinued AS Знято_з_виробництва,
+      description AS Опис,
+      picture_url AS Посилання_на_зображення
+    FROM products
+    WHERE unit_price > 25000;
+  ```
+  Результат: Отримано 13 записiв за цiною бiльше 25000, з назвою товару, кiлькiстью в упаковцi, цiною, у наявностi, в доставцi, чи знято з виробництва, описом та посилання на зображення. 
+  <img width="1554" height="441" alt="image" src="https://github.com/user-attachments/assets/a39dc367-9c48-49bf-b5a7-8a4d2e38767d" />
+
+  ```sql
+    -- Показати всі замовлення зі статусом 'delivered'. --
+  SELECT
+    order_date AS Дата_замовлення,
+    required_date AS Потрібна_дата,
+    shipped_date AS Дата_відправки,
+    ship_via AS Спосіб_доставки,
+    freight AS Вартість_доставки,
+    ship_name AS Назва_отримувача,
+    ship_address AS Адресса_доставки,
+    ship_city AS Мiсто_доставки,
+    ship_postal_code AS Поштовий_індекс_доставки,
+    order_status AS Статус_замовлення
+  FROM orders
+  WHERE order_status = 'delivered';
+  ```
+  Результат: Отримано 26 записiв за виконаним статусом доставкi, з датами замовлення, вiдправкi та приблизною датою прибуття; спосiбом, адрессою, мiстом, поштовим iндексом та вартicтю доставкi; назвою отримувача, статусом.
+  <img width="807" height="479" alt="image" src="https://github.com/user-attachments/assets/073d5386-0ea8-459b-aad4-f43194a5dbae" />
+
+  ```sql
+    -- Знайти співробітників, які працюють у відділі продажів (посада містить слово "продаж"). --
+  SELECT
+    last_name AS Прiзвище,
+    first_name AS Iмя,
+    middle_name AS По_батькові,
+    title AS Посада,
+    birth_date AS Дата_народження,
+    hire_date AS Дата_найму,
+    address AS Адресса,
+    city AS Мiсто,
+    phone AS Телефон,
+    email AS Електронна_пошта,
+    salary AS Зарплата
+  FROM employees
+  WHERE title LIKE '%продаж%';
+  ```
+  Результат: Отримано 3 записи спiвробiтникiв за посадою що мiстить 'продаж', прiзвище, iмя, по батьтковi, посада, дата народження, дата найму, адресса, мiсто, телефон, електронна пошта, зарплата.
+  <img width="1089" height="115" alt="image" src="https://github.com/user-attachments/assets/045ecc80-6534-4a98-ab13-fcbf47da351e" />
+
 
 
 
