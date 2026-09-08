@@ -20,7 +20,7 @@ ORDER BY table_name;
 
 Результат: У базі даних створено 8 основних таблиць: categories, customers, employees, order_items, orders, products, regions, suppliers.
 
-
+<img width="167" height="407" alt="image" src="https://github.com/user-attachments/assets/02f30301-8e4b-4765-90bb-7b4124149cc8" />
 ...
 
 
