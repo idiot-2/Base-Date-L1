@@ -2,7 +2,7 @@
 
 ## Загальна інформація
 
-**Здобувач освіти:** [Терещук Дмитро Олександрович]
+**Здобувач освіти:** 
 **Група:** [31]
 **Обраний рівень складності:** [1/2]
 
@@ -176,7 +176,7 @@ ORDER BY table_name;
   FROM customers
   ORDER BY contact_name;
   ```
-  Результат: Отримано 15 записів, відсортовані за Iмям .
+  Результат: Отримано 15 клієнтів, відсортованих в алфавітному порядку за іменем контакту.
 
   ```sql
     -- Вивести замовлення від найновіших до найстаріших. --
@@ -195,10 +195,10 @@ ORDER BY table_name;
   FROM orders
   ORDER BY order_date DESC;
   ```
-  ### 4.Обмеження результатів LIMIT:
-  Результат:.
+  Результат: Результат: Отримано 33 замовлення, відсортовані від найновіших до найстаріших (за датою спадаючий порядок).
   <img width="887" height="565" alt="image" src="https://github.com/user-attachments/assets/73b967a2-d3bb-43a2-80de-6e03da7e1d6b" />
 
+  ### 4.Обмеження результатів LIMIT:
   ```sql
     -- Показати перші 10 найдорожчих товарів. --
   SELECT
@@ -214,7 +214,7 @@ ORDER BY table_name;
   FROM products
   ORDER BY unit_price DESC LIMIT 10;
   ```
-  Результат:.
+  Результат: Отримано 10 найдорожчих товарів з максимальною ціною 95000 грн.
   <img width="949" height="201" alt="image" src="https://github.com/user-attachments/assets/2c0b2481-8ffd-4c85-a570-a71910b6ab86" />
 
   ```sql
@@ -234,7 +234,7 @@ ORDER BY table_name;
   FROM orders
   ORDER BY order_date DESC LIMIT 5;
   ```
-  Результат:.
+  Результат: Отримано 5 останніх замовлень за датою з інформацією про доставку.
   <img width="809" height="114" alt="image" src="https://github.com/user-attachments/assets/083584ec-0945-4958-b449-66fc4216ae15" />
 
   ```sql
@@ -254,7 +254,7 @@ ORDER BY table_name;
   FROM customers
   ORDER BY contact_name LIMIT 8;
   ```
-  Результат
+  Результат: Отримано 8 перших клієнтів в алфавітному порядку.
   <img width="910" height="162" alt="image" src="https://github.com/user-attachments/assets/26c2b2b1-4cad-4720-9ecf-a9ce537391ea" />
 
   ## Рівень 2
