@@ -270,8 +270,9 @@ ORDER BY table_name;
   FROM customers
   WHERE contact_name LIKE 'Іван%';  -- імена що починаються з "Іван"
   ```
-  Результат:.
-  <img width="345" height="41" alt="image" src="https://github.com/user-attachments/assets/4c6db35b-488c-4312-bf91-ef54ecca4f36" />
+  Результат: Знайдено 1 клієнта з іменем що починається на "Іван".
+  <img width="861" height="99" alt="image" src="https://github.com/user-attachments/assets/cbd2aca7-2041-4737-b139-56f9eb9394bd" />
+
 
   ```sql
     -- Вивести товари, в назві яких є слово "phone" або "телефон". --
@@ -285,7 +286,7 @@ ORDER BY table_name;
   WHERE product_name ILIKE '%phone%' 
      OR product_name ILIKE '%телефон%';
   ```
-  Результат:.
+  Результат: Знайдено 1 товар зі словом "phone" у назві з ціною 45000 грн.
   <img width="594" height="75" alt="image" src="https://github.com/user-attachments/assets/cb551d10-8e00-48c4-83ce-2162f11a5115" />
 
   ```sql
@@ -299,7 +300,7 @@ ORDER BY table_name;
   FROM products
   WHERE product_name LIKE 'Samsung%';
   ```
-  Результат: .
+  Результат: Знайдено 4 товари з марки Samsung.
   <img width="686" height="143" alt="image" src="https://github.com/user-attachments/assets/6fd786b5-36eb-4555-ab01-3bf8cc3127d7" />
 
   ```sql
@@ -313,7 +314,7 @@ ORDER BY table_name;
   FROM products
   WHERE product_name ILIKE '%128GB%';  -- товари що містять "128GB"
   ```
-  Результат:.
+  Результат: Знайдено 6 товарів з об'ємом пам'яті 128GB.
   <img width="706" height="179" alt="image" src="https://github.com/user-attachments/assets/978eb13c-ef58-41cb-ab5d-48be63d81f3c" />
 
 
@@ -328,9 +329,10 @@ ORDER BY table_name;
   FROM customers
   WHERE contact_title ILIKE '%директор';  -- пошук посад що закінчуються на "директор"
   ```
-  Результат:.
+  Результат: Знайдено 3 клієнти з посадою що закінчується на "директор".
   <img width="828" height="148" alt="image" src="https://github.com/user-attachments/assets/cfe2960c-78ba-4b14-bc69-717c305ba61c" />
 
+### 2. Логічні оператори AND, OR, NOT:
   ```sql
     -- Знайти товари дорожчі за 15000 грн і дешевші за 50000 грн. --
   SELECT
@@ -341,9 +343,9 @@ ORDER BY table_name;
     category_id AS ID_категорiї            -- категорія товару
   FROM products
   WHERE unit_price > 15000 
-    AND unit_price < 50000;  -- середній ціновий сегмент для масового ринку
+    AND unit_price < 50000;
   ```
-  Результат:.
+  Результат: Знайдено 20 товарів у цінову діапазоні 15000-50000 грн.
   <img width="624" height="539" alt="image" src="https://github.com/user-attachments/assets/0c05182c-d1f0-45ca-bb1f-7fc2df24c7b6" />
 
   ```sql
@@ -358,7 +360,7 @@ ORDER BY table_name;
   WHERE customer_type = 'company'  -- тільки юридичні особи
     AND (city = 'Київ' OR city = 'Львів');
   ```
-  Результат:.
+  Результат: Знайдено 2 юридичні особи з міст Київ або Львова.
   <img width="736" height="132" alt="image" src="https://github.com/user-attachments/assets/e71dbd82-e4bf-4c59-a260-ed778ccda1df" />
 
   ```sql
@@ -373,7 +375,7 @@ ORDER BY table_name;
   WHERE category_id = 1
     AND (supplier_id = 1 OR supplier_id = 3);
   ```
-  Результат:.
+  Результат: Знайдено 3 смартфони від постачальників 1 або 3.
   <img width="657" height="127" alt="image" src="https://github.com/user-attachments/assets/9d330930-6cf1-4640-b980-b49d8ffc2c62" />
 
   ```sql
@@ -388,7 +390,7 @@ ORDER BY table_name;
   WHERE ship_via = 'Нова Пошта'
     AND (ship_city = 'Київ' OR ship_city = 'Львів');
   ```
-  Результат:.
+  Результат: Знайдено 7 замовлень від "Нової Пошти" до Києва або Львова.
   <img width="555" height="223" alt="image" src="https://github.com/user-attachments/assets/b7889821-567d-4fd3-979f-dafdc5f330ba" />
 
   ```sql
@@ -403,7 +405,7 @@ ORDER BY table_name;
   WHERE title LIKE 'Менеджер%'  -- посада містить "Менеджер"
     AND (city = 'Київ' OR city = 'Львів');
   ```
-  Результат:.
+  Результат: Знайдено 3 менеджерів у містах Київ та Львів.
   <img width="486" height="163" alt="image" src="https://github.com/user-attachments/assets/e6c1b664-0ee3-463e-bd4d-84ca76eab90b" />
 
   ```sql
@@ -418,9 +420,10 @@ ORDER BY table_name;
   WHERE customer_type = 'company'  -- тільки юридичні особи
     AND (company_name LIKE 'ТОВ%' OR company_name LIKE 'ПП%');
   ```
-  Результат:.
+  Результат: Знайдено 5 компаній типу ТОВ, ПП або ПАТ.
   <img width="796" height="204" alt="image" src="https://github.com/user-attachments/assets/ecaf6a7d-44e1-4143-8519-0deca05e9a81" />
 
+### 3. Оператори IN, BETWEEN, IS NULL:
   ```sql
     -- Вивести клієнтів з міст Київ, Харків, Одеса, Дніпро. --
   SELECT
@@ -432,7 +435,7 @@ ORDER BY table_name;
   FROM customers
   WHERE city IN ('Київ', 'Харків', 'Одеса', 'Дніпро');
   ```
-  Результат:.
+  Результат: Знайдено 9 клієнтів з чотирьох великих міст України (Київ, Харків, Одеса, Дніпро).
   <img width="824" height="422" alt="image" src="https://github.com/user-attachments/assets/bd290267-3458-44ae-bfdb-d0c9b1d7d8cb" />
 
   ```sql
@@ -446,7 +449,7 @@ ORDER BY table_name;
   FROM products
   WHERE unit_price BETWEEN 10000 AND 30000;  -- середній ціновий сегмент
   ```
-  Результат:.
+  Результат: Знайдено 18 товарів у ціновому діапазоні 10000-30000 грн.
   <img width="633" height="448" alt="image" src="https://github.com/user-attachments/assets/e4e80db6-c0d5-4aca-9c1b-af4dc0948d22" />
 
   ```sql
@@ -460,7 +463,7 @@ ORDER BY table_name;
   FROM products
   WHERE units_in_stock BETWEEN 10 AND 50;
   ```
-  Результат:.
+  Результат: Знайдено 17 товарів з кількістю на складі від 10 до 50 штук.
   <img width="711" height="508" alt="image" src="https://github.com/user-attachments/assets/860b0034-5cfb-4275-b8cc-c79967c46391" />
 
   ```sql
@@ -474,7 +477,7 @@ ORDER BY table_name;
   FROM orders
   WHERE freight BETWEEN 100 AND 500;
   ```
-  Результат:.
+  Результат: Знайдено 18 замовлень з вартістю доставки від 100 до 500 грн.
   <img width="317" height="478" alt="image" src="https://github.com/user-attachments/assets/3e64e6f8-6a99-4f79-9f2d-be1a08310aa7" />
 
   ```sql
@@ -488,7 +491,7 @@ ORDER BY table_name;
   FROM products
   WHERE category_id IN (1, 2, 3);
   ```
-  Результат:.
+  Результат: Знайдено 11 товарів з категорій 1, 2 та 3.
   <img width="524" height="400" alt="image" src="https://github.com/user-attachments/assets/bc8237c2-670b-40e3-a3a1-c6626854ffd1" />
 
   ```sql
@@ -502,7 +505,7 @@ ORDER BY table_name;
   FROM orders
   WHERE order_status IN ('delivered','shipped');
   ```
-  Результат:.
+  Результат: Знайдено 26 замовлень зі статусами "delivered" або "shipped".
   <img width="311" height="496" alt="image" src="https://github.com/user-attachments/assets/912d03a6-5044-4266-863d-f78f020bfd00" />
 
   ```sql
@@ -516,7 +519,7 @@ ORDER BY table_name;
   FROM customers
   WHERE company_name IS NULL;
   ```
-  Результат:.
+  Результат: Знайдено 2 клієнти без компанії (фізичні особи).
   <img width="604" height="269" alt="image" src="https://github.com/user-attachments/assets/e3f67b44-f80b-43b7-8a3c-086afc06345c" />
 
   ```sql
@@ -530,9 +533,10 @@ ORDER BY table_name;
   FROM customers
   WHERE contact_title IS NOT NULL;
   ```
-  Результат:.
+  Результат: Знайдено 15 клієнтів з вказаною посадою.
   <img width="655" height="191" alt="image" src="https://github.com/user-attachments/assets/88ca6212-5e9d-418e-b18a-8fe9658920a5" />
 
+### 4. Комбінування умов:
   ```sql
     -- Самостійно: Створити 5 складних запитів, які поєднують різні типи умов (LIKE + AND/OR, BETWEEN + IN, тощо). --
   SELECT
@@ -545,7 +549,7 @@ ORDER BY table_name;
   WHERE product_name ILIKE '%phone%'
     AND unit_price BETWEEN 5000 AND 50000;
   ```
-  Результат:.
+  Результат: Знайдено 1 мобільний телефон зі словом "phone" у цінах 5000-50000 грн.
   <img width="433" height="58" alt="image" src="https://github.com/user-attachments/assets/78c608ed-c5cb-4d12-9783-70e30e1655b1" />
 
   ```sql
@@ -561,7 +565,7 @@ ORDER BY table_name;
     OR company_name LIKE '%ПП%'    -- приватні підприємства
     OR company_name LIKE '%ПАТ%';  -- публічні акціонерні товариства
   ```
-  Результат:.
+  Результат: Знайдено 5 компаній типу ТОВ, ПП або ПАТ.
 
   ```sql
     -- Самостійно: Створити 5 складних запитів, які поєднують різні типи умов (LIKE + AND/OR, BETWEEN + IN, тощо). --
@@ -575,7 +579,7 @@ ORDER BY table_name;
   WHERE unit_price BETWEEN 5000 AND 50000
     AND category_id IN (1, 2, 5);
   ```
-  Результат:.
+  Результат: Знайдено 9 товарів у діапазоні 5000-50000 грн з категорій 1, 2, 5.
   <img width="530" height="269" alt="image" src="https://github.com/user-attachments/assets/b4277b07-9362-489f-bb71-b6c68e18727d" />
 
   ```sql
@@ -590,7 +594,7 @@ ORDER BY table_name;
   WHERE title LIKE 'Менеджер%'  -- посада містить "Менеджер"
     AND city IN ('Київ', 'Львів');
   ```
-  Результат:.
+  Результат: Знайдено 3 менеджерів у містах Київ та Львів.
   <img width="402" height="135" alt="image" src="https://github.com/user-attachments/assets/0e37ec5c-4d2c-409f-b5a2-be99502878ce" />
 
   ```sql
@@ -606,9 +610,10 @@ ORDER BY table_name;
   WHERE ship_city != 'Київ'
     AND order_status IN ('delivered', 'shipped');
   ```
-  Результат:.
+  Результат: Знайдено 23 замовлення з регіональних міст (не Київ) зі статусом доставки.
   <img width="488" height="520" alt="image" src="https://github.com/user-attachments/assets/fb7d0769-e525-4f0d-b14b-c71c20f49975" />
 
+### 5. Складне сортування та пагінація:
   ```sql
     -- Самостійно: Написати 3 запити з сортуванням за кількома полями та 2 запити з використанням OFFSET для пагінації. --
   SELECT
@@ -620,7 +625,7 @@ ORDER BY table_name;
   FROM products
   ORDER BY category_id ASC, unit_price ASC;
   ```
-  Результат:.
+  Результат: Отримано 25 товарів, відсортованих за категорією (1-8), потім за ціною від дешевих до дорогих.
   <img width="359" height="460" alt="image" src="https://github.com/user-attachments/assets/26738f9e-6247-466d-8872-a333403aae00" />
 
   ```sql
@@ -634,7 +639,7 @@ ORDER BY table_name;
   FROM customers
   ORDER BY city ASC, contact_name ASC;
   ```
-  Результат:.
+  Результат: Отримано 15 клієнтів, відсортованих за містом, потім за іменем контакту (А-Я).
   <img width="380" height="285" alt="image" src="https://github.com/user-attachments/assets/fa0b08c0-b29d-4c8f-b5be-5a3e52f09c2b" />
 
   ```sql
@@ -648,7 +653,7 @@ ORDER BY table_name;
   FROM orders
   ORDER BY order_status ASC, order_date DESC;
   ```
-  Результат:.
+  Результат: Отримано 33 замовлення, відсортовані за статусом, потім за датою (новіші першими).
   <img width="319" height="565" alt="image" src="https://github.com/user-attachments/assets/0626c6db-79b0-43d4-8b2b-24eba5f63054" />
 
   ```sql
@@ -663,7 +668,7 @@ ORDER BY table_name;
   ORDER BY product_id ASC
   LIMIT 10 OFFSET 0;
   ```
-  Результат:.
+  Результат: Отримано 10 перших товарів, відсортованих за ID.
   <img width="352" height="196" alt="image" src="https://github.com/user-attachments/assets/108d555e-801d-4ee8-bb30-cece13ba40b7" />
 
   ```sql
@@ -678,7 +683,7 @@ ORDER BY table_name;
   ORDER BY product_id ASC
   LIMIT 10 OFFSET 10;
   ```
-  Результат:.
+  Результат: Отримано 10 товарів (з 11 по 20), відсортованих за ID.
   <img width="360" height="199" alt="image" src="https://github.com/user-attachments/assets/e14109dc-c156-4cd0-bf99-13ca04ab9364" />
 
   
