@@ -177,6 +177,8 @@ ORDER BY table_name;
   ORDER BY contact_name;
   ```
   Результат: Отримано 15 клієнтів, відсортованих в алфавітному порядку за іменем контакту.
+  <img width="1468" height="446" alt="image" src="https://github.com/user-attachments/assets/869e32c9-c041-455e-abf8-3c1d1233cd32" />
+
 
   ```sql
     -- Вивести замовлення від найновіших до найстаріших. --
