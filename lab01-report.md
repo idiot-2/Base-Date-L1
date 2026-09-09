@@ -42,7 +42,7 @@ ORDER BY table_name;
       customer_type AS Тип_клієнта
     FROM customers;
   ```
-  Результат: Отримано 15 записів клієнтів, включаючи як фізичних осіб, так і юридичні особи з різних міст України.
+  Результат: Отримано 15 записів клієнтів.
   <img width="1572" height="506" alt="image" src="https://github.com/user-attachments/assets/07d2ccee-506d-4557-bdca-b1eb6846b403" />
 
   ```sql
@@ -197,7 +197,7 @@ ORDER BY table_name;
   FROM orders
   ORDER BY order_date DESC;
   ```
-  Результат: Результат: Отримано 33 замовлення, відсортовані від найновіших до найстаріших (за датою спадаючий порядок).
+  Результат: Результат: Отримано 31 замовлення, відсортовані від найновіших до найстаріших (за датою спадаючий порядок).
   <img width="887" height="565" alt="image" src="https://github.com/user-attachments/assets/73b967a2-d3bb-43a2-80de-6e03da7e1d6b" />
 
   ### 4.Обмеження результатів LIMIT:
@@ -216,7 +216,7 @@ ORDER BY table_name;
   FROM products
   ORDER BY unit_price DESC LIMIT 10;
   ```
-  Результат: Отримано 10 найдорожчих товарів з максимальною ціною 95000 грн.
+  Результат: Отримано 10 найдорожчих товарів.
   <img width="949" height="201" alt="image" src="https://github.com/user-attachments/assets/2c0b2481-8ffd-4c85-a570-a71910b6ab86" />
 
   ```sql
