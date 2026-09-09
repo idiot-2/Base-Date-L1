@@ -1,4 +1,4 @@
-<img width="604" height="269" alt="image" src="https://github.com/user-attachments/assets/4ca66c2c-dc91-43e6-a139-b09306519048" /># Лабораторна робота 1. Робота з СУБД PostgreSQL та основи SQL
+# Лабораторна робота 1. Робота з СУБД PostgreSQL та основи SQL
 
 ## Загальна інформація
 
